@@ -1,0 +1,60 @@
+<%- include('partials/header') %>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary text-white">
+  <a class="navbar-brand text-white">Medex Preparatory Course</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+ 
+    </ul>
+
+    <ul class="navbar-nav">
+      <li style="padding-right: 20px;" class="nav-item active">
+        <a>Marking Hub</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+<p style="display: none;" id="userid"><%= users %></p>
+
+<div>
+  <table id="table">
+    <thead>
+    <tr>
+  
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+  
+    </tr>
+  
+    </tbody>
+  </table>
+
+</div>
+
+<script src="js/tablegen.js"></script>
+
+<style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  </style>
+
+<%- include('partials/footer') %>

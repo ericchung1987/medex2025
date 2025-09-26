@@ -1,0 +1,143 @@
+<%- include('partials/header') %>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary text-white">
+  <a class="navbar-brand text-white">Medex Preparatory Course</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto"></ul>
+
+    <ul class="navbar-nav">
+      <li style="padding-right: 20px" class="nav-item active">
+        <a>Marking Hub</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- Hidden stuff -->
+
+<p style="display: none" id="userAnswer"><%= locals.osceAnswer %></p>
+
+<p style="display: none" id="userMark"><%= locals.userData.osceMark %></p>
+
+<div class="container">
+  <br />
+  <h2><%= locals.userData.fullname %>'s Answers</h2>
+
+  <!-- Makes POST request -->
+  <form action="/oscemark" method="POST">
+    <div class="form-group">
+      <input
+        style="display: none"
+        type="username"
+        class="form-control"
+        name="username"
+        placeholder="eg: 870504495211"
+        value="<%= locals.userData.username %>"
+      />
+    </div>
+    <div class="form-group">
+      <table class="table table-success table-striped table-hover" id="table">
+        <thead>
+          <tr></tr>
+        </thead>
+        <tbody>
+          <tr></tr>
+        </tbody>
+      </table>
+    </div>
+    <h6 style="text-align: center">Click to submit the score</h6>
+    <div style="margin-bottom: 20px" class="text-center">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        id="completebutton"
+        role="button"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+
+<script>
+  // grab the list data from the hidden element
+  let jsontext = $("#userAnswer").html();
+  // parse the JSON file
+  let answer = JSON.parse(jsontext);
+
+  // lets grab the existing answers
+ 
+  var marktext = $("#userMark").html().split(',').map( Number );
+
+  let myTable = document.getElementById("table");
+
+  // create a table
+  let headers = ["Question", "Answer", "Marks"];
+  let tableHead = document.createElement("thead");
+  let tableBody = document.createElement("tbody");
+  let tableRow = document.createElement("tr");
+
+  // create the table headers
+  for (let i = 0; i < headers.length; i++) {
+    let tableHeaders = document.createElement("th");
+    tableHeaders.innerHTML = headers[i];
+    tableRow.appendChild(tableHeaders);
+  }
+
+  // add the table headers to the table
+  tableHead.appendChild(tableRow);
+  myTable.appendChild(tableHead);
+
+  Array(answer).forEach(function (item) {
+    let qnumber = Object.keys(item);
+    let count = 0;
+    for (let i = 0; i < qnumber.length; i++) {
+      let number = Object.keys(item[qnumber[i]]);
+      for (let j = 0; j < number.length; j++) {
+        let tableRow = document.createElement("tr");
+        let tableData = document.createElement("td");
+        tableData.innerHTML = i + 1 + number[j];
+        tableRow.appendChild(tableData);
+        tableData = document.createElement("td");
+        tableData.innerHTML = item[qnumber[i]][number[j]];
+        tableRow.appendChild(tableData);
+
+        // for mark
+        tableData = document.createElement("td");
+        count += 1;
+        let inputfield = "";
+        if (marktext.length > 2)
+        // the reason theres a big fat 0 in the thing is because i forgot to increase count, idiot
+        {
+          inputfield =
+          "<input type='number' name='" + '0' + "' step= '0.5' value = "+  marktext[count -1] + ">";
+        }
+        else {
+          inputfield =
+          "<input type='number' name='" + '0' + "' step= '0.5' value = '0'>";
+        }
+  
+
+        tableData.innerHTML = inputfield;
+        tableRow.appendChild(tableData);
+
+        tableBody.appendChild(tableRow);
+      }
+    }
+  });
+
+  // add the table rows to the table
+  myTable.appendChild(tableBody);
+</script>
+
+<%- include('partials/footer') %>

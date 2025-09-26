@@ -1,0 +1,402 @@
+{
+    "1": {
+        "question": "In the heart",
+        "A": "The right atrium is the most posterior chamber",
+        "B": "The crista terminalis separates the right atrium from its appendage",
+        "C": "The left ventricle is characterised by a muscular conus (or infundibulum) and trabeculae carnae",
+        "D": "The left atrium receives two pulmonary veins",
+        "E": "The left ventricle is the most anterior chamber"
+    },
+    "2":{
+        "question": "Regarding the coronary arteries",
+        "A": "The right coronary artery arises from the right posterior aortic sinus",
+        "B": "The sinoatrial node is usually supplied by the right coronary artery",
+        "C": "Approximately 90% of individuals show right coronary artery dominance",
+        "D": "The circumflex artery has several diagonal branches",
+        "E": "The left anterior descending artery runs in the atrioventricular groove"
+    },
+    "3":{
+        "question": "Regarding axial CT scan of the mediastinum",
+        "A": "Left atrium is anterior to the right atrium",
+        "B": "Superior vena cava lies to the left of the ascending aorta",
+        "C": "Oesophagus is posteromedial to the arch of the aorta",
+        "D": "Thoracic duct lies anterior to the oesophagus",
+        "E": "The left superior pulmonary vein is separated from the left lower lobe pulmonary artery by the bronchus"
+    },
+    "4":{
+        "question": "In the hilum",
+        "A": "Bronchial arteries lie superior to the pulmonary arteries",
+        "B": "Left pulmonary artery lies below the left main bronchus",
+        "C": "Right pulmonary artery lies anterior to the right main bronchus",
+        "D": "Maximum diameter of the normal descending branch of the right pulmonary artery is 12 mm in males",
+        "E": "Intrapulmonary lymphatics drain directly to the bronchopulmonary nodes"
+    },
+    "5":{
+        "question": "Regarding the normal chest",
+        "A": "The fissures are seen as a relatively avascular zone on a standard CT thorax",
+        "B": "The azygous lobe fissure is seen in 5-10% of normal population",
+        "C": "The superior accessory fissure separates the apical segment from the anterior and posterior segments of the upper lobe",
+        "D": "The inferior accessory fissure separates the medial from the other segments in the right lower lobe",
+        "E": "The inferior pulmonary ligament represents pleural reflections from the mediastinum which hang down from the hila."
+    },
+    "6":{
+        "question": "In the PA radiograph of the chest",
+        "A": "The left hilum lies lower than the right",
+        "B": "The upper lobe pulmonary veins lie medial to the arteries",
+        "C": "The lateral basal segment of the right lower lobe overlies the postero-basal segment",
+        "D": "Apical segment of the right lower lobe overlies part of the posterior segment of the upper lobe",
+        "E": "The posterior junctional line extends more superior than the anterior junctional line"
+    },
+    "7":{
+        "question": "Regarding the orbit",
+        "A": "The nasolacrimal duct drains into the middle meatus",
+        "B": "The optic nerve traverses the superior orbital fissure",
+        "C": "The oculomotor nerve supplies the inferior oblique muscle",
+        "D": "The ophthalmic artery arises from the internal carotid artery",
+        "E": "The superior rectus muscle is inferior to the levator palpabrae superioris"
+    },
+    "8":{
+        "question": "In the skull",
+        "A": "The optic foramina are medial to the anterior clinoid process",
+        "B": "The tuberculum sellae is superior to the anterior clinoid process",
+        "C": "The anterior clinoid process is lateral to the ipsilateral posterior clinoid process",
+        "D": "The medial clinoid process is a constant feature in the normal population",
+        "E": "The frontal sinus may extend into the orbital plate of the frontal bone"
+    },
+    "9":{
+        "question": "Regarding the pituitary gland",
+        "A": "The pituitary gland is superior to the suprasellar cistern",
+        "B": "The thickness of the infundibulum normally exceeds the diameter of basilar artery",
+        "C": "The posterior pituitary usually returns a high signal on T1-weighted images",
+        "D": "Maldescended pituitary tissue may be found as a soft tissue mass expanding the infundibulum",
+        "E": "The pituitary gland is usually of a constant size in adult"
+    },
+    "10":{
+        "question": "In the temporomandibular joint",
+        "A": "An articular disc divides the joint cavity into anterior and posterior compartments",
+        "B": "The lateral pterygoid muscle is inserted partly into the articular disc",
+        "C": "The capsule is attached inferiorly to the coronoid process of mandible",
+        "D": "The sphenomandibular ligament lies medially",
+        "E": "Less stable in the open position"
+    },
+    "11":{
+        "question": "The cavernous sinus",
+        "A": "Drains the ophthalmic veins",
+        "B": "Drains into the superior and inferior petrosal sinuses",
+        "C": "Contains the mandibular division of the trigeminal nerve",
+        "D": "Lies lateral to the sphenoid sinus and pituitary fossa",
+        "E": "Lies in the subarachnoid space"
+    },
+    "12":{
+        "question": "Regarding the ear",
+        "A": "The second part of the facial canal lies inferior to the lateral semi-circular canal",
+        "B": "The carotid canal lies in the anterior wall of the middle ear",
+        "C": "The stapes inserts into the round window",
+        "D": "The mastoid antrum lies posterior to the middle ear",
+        "E": "Porus acousticus divides the internal auditory meatus (IAM) into upper and lower compartments"
+    },
+    "13":{
+        "question": "Regarding the pharynx and related spaces",
+        "A": "Pterygomaxillary fissure connects the pterygopalatine fossa with the infratemporal fossa",
+        "B": "The epiglottis marks the inferior limit of the laryngopharynx",
+        "C": "The infratemporal space is limited medially by the lateral pterygoid plate",
+        "D": "On axial imaging of the nasopharynx, the fossae of Rosenmüller are posterior to the torus tubarius",
+        "E": "On CT scan, the parapharyngeal space is seen as fat density anteromedial to the styloid process"
+    },
+    "14":{
+        "question": "Regarding the thyroid and parathyroid glands",
+        "A": "The pyramidal lobe extends superiorly from the left lobe",
+        "B": "The right lobe is usually larger and vascular than the left lobe",
+        "C": "The thyroid gland appears relatively homogenous in echotexture and hyperechoic than the sternocleidomastoid muscle on ultrasound",
+        "D": "99mTc pertechnetate imaging provides functional data on the thyroid gland",
+        "E": "The thyroid derives its blood supply from the external and internal carotid arteries"
+    },
+    "15":{
+        "question": "Regarding the spinal cord",
+        "A": "It extends in the adult from the foramen magnum to the L1/L2 level",
+        "B": "The lumbar segments correspond to the level of the lumbar vertebrae",
+        "C": "On plain CT, the low-density epidural fat outlines the thecal sac",
+        "D": "The first to seventh cervical spinal nerves exit below the pedicle of the corresponding vertebrae",
+        "E": "The anterior horns of the spinal cord contain the cell bodies of the motor neurons"
+    },
+    "16":{
+        "question": "Regarding the oesophagus",
+        "A": "Commences at the cricopharyngeal muscle at C4",
+        "B": "Pierces the diaphragm with the right phrenic nerve",
+        "C": "Has striated muscle in the wall of its upper third, and smooth muscle in the wall more distally",
+        "D": "Is retroperitoneal in its intra-abdominal portion",
+        "E": "Receives part of its blood supply from the thyrocervical trunk"
+    },
+    "17":{
+        "question": "Regarding the duodenum",
+        "A": "The first part lies anterior to the gastroduodenal artery",
+        "B": "The first part lies posterior to the gallbladder and the quadrate lobe of the liver",
+        "C": "The second part lies anterior to the left kidney",
+        "D": "The third part lies anterior to the superior mesenteric vessels",
+        "E": "The para duodenal fossa lies to the left of the fourth part of the duodenum"
+    },
+    "18":{
+        "question": "Regarding the liver",
+        "A": "The caudate lobe separates the porta hepatis from the inferior vena cava",
+        "B": "Segment V is the anterior inferior segment of the liver",
+        "C": "Venous drainage of the quadrate lobe is usually distinct from the rest of the liver, direct to the inferior vena cava rather than into the hepatic veins",
+        "D": "The ligamentum venosum is the remnant of the left umbilical vein",
+        "E": "The liver is hyperintense to spleen on T1- weighted MRI images"
+    },
+    "19":{
+        "question": "Regarding the spleen",
+        "A": "It contains reticuloendothelial cells",
+        "B": "Its posterior aspect is related to the stomach",
+        "C": "The tail of pancreas abuts against the hilum",
+        "D": "The left kidney is related to its medial aspect",
+        "E": "The main blood supply is from the superior mesenteric artery"
+    },
+    "20":{
+        "question": "The common bile duct",
+        "A": "Lies to the right of the gastroduodenal artery",
+        "B": "Lies posterolateral to the portal vein",
+        "C": "Drains into the 2nd part of duodenum",
+        "D": "Has a maximum diameter of 11mm on ultrasonography",
+        "E": "Has a separate opening from the pancreatic duct in 40% of patient"
+    },
+    "21":{
+        "question": "Regarding peritoneal spaces",
+        "A": "The right subphrenic space extends from the right coronary ligament postero-inferiorly to the falciform ligament medially",
+        "B": "In the supine position the hepatorenal space (Morrison’s pouch) is more dependant than the right paracolic gutter",
+        "C": "The lesser sac is posterior to the pancreas",
+        "D": "Fluid collections in the pelvis that spread to the left subphrenic space, generally involve the lesser sac",
+        "E": "Subphrenic collections are more common on the left than the right"
+    },
+    "22":{
+        "question": "Regarding the ovaries",
+        "A": "Venous drainage of the right ovary is to the right renal vein",
+        "B": "Lie anterolateral to the uterus",
+        "C": "Lie on posterior surface of broad ligament",
+        "D": "On T2-weighted images, the ovarian stroma is isointense to fat",
+        "E": "Prior to ovulation follicles measure approximately 18-24mm"
+    },
+    "23":{
+        "question": "The left kidney",
+        "A": "Has the renal pelvis lying posterior to the artery",
+        "B": "Is posterolateral to the spleen",
+        "C": "Lies in the anterior pararenal space",
+        "D": "Has a duplex collecting system in 10% of patients",
+        "E": "Has a renal cortex which is more echogenic than the liver on ultrasonography"
+    },
+    "24":{
+        "question": "Regarding the urinary tract",
+        "A": "The accessory renal arteries arise from the lumbar arteries in the majority",
+        "B": "In complete ureteral duplication, the ureter serving the upper moiety inserts inferior to the lower moiety",
+        "C": "The lymphatic drainage of the urinary bladder drains into the internal iliac nodes",
+        "D": "The trigone of the urinary bladder has coarse trabeculated muscle fibres",
+        "E": "On plain radiograph, the kidney size is approximately three and a half lumbar vertebrae"
+    },
+    "25":{
+        "question": "Regarding the humerus",
+        "A": "The short head of the biceps runs in between the lesser and greater tuberosities.",
+        "B": "The deltoid tuberosity is on the lateral aspect of the mid-shaft",
+        "C": "Trochlea articulates with the radial head",
+        "D": "The secondary ossification centre of the greater tuberosity appears at one year",
+        "E": "The anterior humeral line bisects the capitulum on the lateral radiograph"
+    },
+    "26":{
+        "question": "Regarding the shoulder",
+        "A": "Glenohumeral ligament strengthens the anterior capsule of the shoulder joint",
+        "B": "The subacromial bursa communicates with the shoulder joint",
+        "C": "The teres major is part of the rotator cuff muscle",
+        "D": "The tendon of the long head of bicep is seen as a filling defect in arthrography",
+        "E": "The greater tuberosity is best seen on the PA view with internal rotation"
+    },
+    "27":{
+        "question": "Axillary artery",
+        "A": "Begins at the medial border of the first rib",
+        "B": "Is divided into three parts by pectoralis major muscle",
+        "C": "Gives off the anterior circumflex humeral artery",
+        "D": "Ends at the upper border of the teres major muscle",
+        "E": "Gives off the lateral thoracic artery"
+    },
+    "28":{
+        "question": "In the knee joint",
+        "A": "The articular surface is formed by femur, tibia, patella and fibula",
+        "B": "The suprapatellar bursa lies between biceps femoris muscle and femur",
+        "C": "The popliteus tendon sheath is related to the posterior horn of the medial meniscus",
+        "D": "The posterior cruciate ligament inserts into the lateral surface of the medial femoral condyle",
+        "E": "The skyline view demonstrates the intercondylar fossa"
+    },
+    "29":{
+        "question": "In the hip joint",
+        "A": "The capsule is attached to the intertrochanteric crest posteriorly",
+        "B": "The centre of the acetabulum is a non-articular area",
+        "C": "For an AP radiograph, the leg is externally rotated",
+        "D": "The normal acetabular angle is 45 degrees",
+        "E": "The head appears hyperechoic in infant on ultrasound"
+    },
+    "30":{
+        "question": "Regarding arterial supply of the lower limb",
+        "A": "The distal third of the superficial femoral artery passes in the adductor canal",
+        "B": "The posterior tibial artery continues as the dorsalis pedis artery",
+        "C": "The peroneal artery is lateral to the posterior tibial artery on AP view of angiogram",
+        "D": "Medial circumflex artery branches from superficial femoral artery",
+        "E": "The Valsalva manoeuvre slows down the arterial blood flow"
+    },
+    "31":{
+        "question": "Steroid prophylaxis is needed prior to contrast enhanced CT examination in patients with the following conditions",
+        "A": "Asthma",
+        "B": "Chronic renal failure",
+        "C": "Hyperthyrodism",
+        "D": "Seafood Allergy",
+        "E": "Pregnancy"
+    },
+    "32":{
+        "question": "The followings are contraindications to hysterosalpingography (HSG)",
+        "A": "Active menses",
+        "B": "Constipation",
+        "C": "Infertility",
+        "D": "Oral contraceptives pills",
+        "E": "Vaginal discharge"
+    },
+    "33":{
+        "question": "Patients’ preparation for transabdominal pelvic ultrasound includes",
+        "A": "Bowel preparation",
+        "B": "Fasting preparation",
+        "C": "Full urination bladder",
+        "D": "Low fat diet",
+        "E": "Urination prior to examination"
+    },
+    "34":{
+        "question": "The following manoeuvres aid visualisation of the pancreas",
+        "A": "Drinking water",
+        "B": "High fat diet",
+        "C": "Light meal",
+        "D": "Prone position",
+        "E": "Semi-recumbent position"
+    },
+    "35":{
+        "question": "The following vessels are interrogated on Doppler Ultrasound for deep",
+        "A": "Common femoral artery",
+        "B": "Long saphenous vein",
+        "C": "Popliteal vein",
+        "D": "Short saphenous vein",
+        "E": "Superficial femoral vein"
+    },
+    "36":{
+        "question": "Regarding contrast enhanced CT abdomen",
+        "A": "Fasting for 2 hours is sufficient",
+        "B": "Laxatives are given 24 hours prior to examination for bowel preparation",
+        "C": "100% Gastrograffin is used as oral contrast",
+        "D": "The smallest cannula size needed for intravenous contrast injection is 16G",
+        "E": "30 seconds delay following contrast injection is sufficient for a portovenous phase"
+    },
+    "37":{
+        "question": "The following solutions are used as positive oral contrast agent in upper gastrointestinal study",
+        "A": "Water",
+        "B": "Milk",
+        "C": "Ultravist (300mgI/ml)",
+        "D": "Barium sulphate",
+        "E": "Gastrograffin"
+    },
+    "38":{
+        "question": "The following are the sonographic features of a renal calculus",
+        "A": "Hypoechoic focus",
+        "B": "Posterior acoustic enhancement",
+        "C": "Reverberation artifacts",
+        "D": "Ring-down artifacts",
+        "E": "Twinkling artifacts on doppler study"
+    },
+    "39":{
+        "question": "The following are the potential spaces for intraperitoneal fluid accumulation in suspected intra-abdominal injury in trauma cases",
+        "A": "Lesser sac",
+        "B": "Liver bare area",
+        "C": "Rectovesical pouch",
+        "D": "Retropubic space",
+        "E": "Splenorenal recess"
+    },
+    "40":{
+        "question": "Regarding radiographic examination of tibia/fibula",
+        "A": "Grid is used",
+        "B": "Images are acquired in one radiographic projection",
+        "C": "Immobilisation is needed",
+        "D": "Only knee joint is included in the field of view",
+        "E": "Patient should be in a standing position"
+    },
+    "41":{
+        "question": "The following imaging features are observed in acute testicular torsion",
+        "A": "Avascular testis",
+        "B": "Hyperechoic testis",
+        "C": "Increased doppler signal in the spermatic cord",
+        "D": "Microlithiasis",
+        "E": "Swollen testis"
+    },
+    "42":{
+        "question": "The following features are observed in acute cholecystitis",
+        "A": "Adenomyomatosis",
+        "B": "Bilobed gallbladder",
+        "C": "Gallbladder polyps",
+        "D": "Pericholecystic fluid",
+        "E": "Thickened gallbladder wall"
+    },
+    "43":{
+        "question": "In pulmonary embolism",
+        "A": "Contrast enhanced CT Thorax is sufficient for diagnosis",
+        "B": "Lower limb deep venous thrombosis is an association",
+        "C": "Normal chest radiograph excludes the diagnosis",
+        "D": "Perfusion-ventilation scintigraphy is indicated",
+        "E": "Oral contraceptive pills are a risk factor"
+    },
+    "44":{
+        "question": "HRCT features in Covid-19 infection include",
+        "A": "Angiopathy",
+        "B": "Calcified nodules",
+        "C": "Ground glass opacities",
+        "D": "Parenchymal bands",
+        "E": "Thromboembolism"
+    },
+    "45":{
+        "question": "Regarding pyloric stenosis",
+        "A": "It is more common in male infant",
+        "B": "It presents with bilious vomiting",
+        "C": "It does not occur in elderly",
+        "D": "Electrolyte imbalance is a complication",
+        "E": "Ultrasound is diagnostic"
+    },
+    "46":{
+        "question": "Regarding stroke",
+        "A": "Hypertension is a risk factor",
+        "B": "Haemorrhagic stroke is the most common",
+        "C": "Normal CT scan excludes the diagnosis",
+        "D": "Posterior circulation infarct is best imaged using a CT scan",
+        "E": "Contrast media administration is mandatory in stroke imaging"
+    },
+    "47":{
+        "question": "Regarding intracranial haemorrhages on CT scan",
+        "A": "Biconvexed hyperdensity indicates extradural bleed",
+        "B": "Crescentic hyperdensity indicates subarachnoid bleed",
+        "C": "Extradural bleed is bounded by sutures",
+        "D": "Intraventricular bleed communicates with the subarachnoid spaces",
+        "E": "Swirl sign indicates active bleed"
+    },
+    "48":{
+        "question": "The following are the radiographic features of pulmonary tuberculosis",
+        "A": "Bronchiectasis",
+        "B": "Cavitation",
+        "C": "Consolidations",
+        "D": "Miliary nodules",
+        "E": "Pleural effusion"
+    },
+    "49":{
+        "question": "In benign prostatic hypertrophy",
+        "A": "Bladder outlet obstruction is a complication",
+        "B": "Serum PSA level is a biochemical marker",
+        "C": "Intraprostatic calcification is a sign of malignancy",
+        "D": "Prostatic volume is 20cc",
+        "E": "Transrectal ultrasound examination is more accurate"
+    },
+    "50":{
+        "question": "Regarding indirect inguinal hernia",
+        "A": "Cough impulse test is negative",
+        "B": "Transillumination test is positive",
+        "C": "It arises medial to the inferior epigastric artery",
+        "D": "Small bowel obstruction is a complication",
+        "E": "Ultrasound examination performed while patient in standing position aids visualisation"
+    }
+}

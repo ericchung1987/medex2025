@@ -1,0 +1,265 @@
+
+<%- include('partials/header') %>
+
+<div class="container">
+
+<!-- Header - think of moving this to header ejs -->
+<div class="jumbotron centered" style="padding-bottom: 10px;">
+  <div class="container">
+    <h1 class="display-3">Welcome to Radiology</h1>
+    <p class="lead">Medex Preparatory Course 2025</p>
+  </div>
+</div>
+
+<%- include('partials/navbar') %>
+
+<div class="container" id="candidate-details">
+  <h2>Candidate Details</h2>
+
+  <div style="margin: 0; padding: 0;">
+    <p>
+      Name: <%= locals.userData.fullname %> 
+      <br>
+      Email Registered: <%= locals.userData.username %>
+    </p>
+  </div>
+
+  <div>
+    <h2>Instruction</h2>
+    <p>
+      This will be a remote exercise so please ensure you have good internet connectivity and reliable hardware, please don't attempt this module on your phone or ipad.
+    </p>
+    <p>
+      This online module will consist of <strong>MCQ (50 questions)</strong>, <strong>OSCE (20 questions)</strong> and <strong>Rapid Reporting (25 questions)</strong>.
+    </p>
+    <p>You will have <strong>120 minutes</strong> for MCQ modules, <strong>60 minutes</strong> for the OSCE module and <strong>30 minutes</strong> for the rapid module.</p>
+    <i>Do not click the back or refresh button to avoid bugging out.</i>
+    <br><br>
+  
+    <p>
+      You need to complete the <strong>MCQ</strong>, <strong>OSCE component</strong> and <strong>Rapid Reporting</strong> in sequence.
+    </p>
+  </div>
+
+  <hr>
+
+  <% if (!locals.userData.mcqCompleted){ %> 
+  <div>
+
+    <h2>MCQ</h2>
+       The MCQ module consist of <strong>50</strong> questions, each question will have <strong>5</strong> subquestions.
+       Each subquestion will be either be <strong>True</strong> or <strong>False</strong>. 
+       You will have <strong>120 minutes</strong> to complete the MCQ module. 
+       This module will be subjected to <strong>Negative Marking</strong>.
+       Each subquestion, minimum mark is <strong>0</strong> and maximum is <strong>5</strong>.
+
+
+     </p>
+     <p>
+      When you have put in all your answer, you may click on the <strong>summary button</strong> to review your answer.
+      To end the module, click on the <strong>Complete Test</strong> button.
+     </p>
+     <% if (locals.userData.mcqStarted){ %> 
+      <a class="btn btn-primary" href="/mcq?pages=1" role="button">Continue MCQ test</a>
+      <% } else { %>
+        <a class="btn btn-primary" href="/mcq?pages=1" role="button">Start MCQ test</a>
+      <% } %>
+     <hr>
+ </div>
+ <div>
+    <h2>MCQ Tutorial</h2>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item"
+        src="https://www.youtube.com/embed/oqc3bjEpu8Y?rel=0"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </div>
+    <hr>
+ </div>
+
+
+ <% } %> 
+ <% if (locals.userData.mcqCompleted && !locals.userData.osceCompleted){ %> 
+
+  <div>
+     <h2>OSCE</h2>
+      <p>
+        The OSCE module consist of 20 questions, there will be alphabet labelled over the anatomical in question. 
+        Each question will have 4-5 labels that you will need to fill in. 
+        You have <strong>60 minutes</strong> to answer all <strong>20 questions</strong>.
+      </p>
+      <p>
+        When you have put in all your answer, you may click on the <strong>summary button</strong> to review your answer.
+        To end the module, click on the <strong>Complete Test</strong> button.
+        There is no <strong>Negative Marking Involved</strong>
+      </p>
+    <% if (locals.userData.osceStarted){ %> 
+      <a class="btn btn-primary" href="/osce?pages=1" role="button">Continue OSCE test</a>
+    <% } else { %> 
+      <a class="btn btn-primary" href="/osce?pages=1" role="button">Start OSCE test</a>
+       <hr>
+    <% } %> 
+  </div>
+
+   <div>
+    <h2>MCQ Tutorial</h2>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item"
+        src="https://youtu.be/_5pVyhbbkYA"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </div>
+    <hr>
+  </div>
+
+  <% } %> 
+ 
+  <% if (locals.userData.osceCompleted && !locals.userData.rapidCompleted){ %> 
+  <!-- Rapids -->
+  <div>
+    <h2>RAPID</h2>
+     <p>
+       The RAPID module consist of 25 questions. <br>
+       Each question will be either be <strong>Normal</strong> or <strong>Abnormal</strong>. <br>
+       If the answer is <strong>abnormal</strong>, you will have to note what is the <strong>abnormality</strong>. 
+       Else if the answer is normal, just type in <strong>normal</strong>. <br>
+       You have <strong>30 minutes</strong> to answer all <strong>25 questions</strong>. <br>
+       This module will be <strong>NOT</strong> be subjected to <strong>Negative Marking</strong>.
+     </p>
+     <p>
+       Please remember to save your answer. <br>
+       When you have put in all your answer, you may click on the <strong>summary button</strong> to review your answer. <br>
+       To end the module, click on the <strong>Complete Test</strong> button.
+     </p>
+   <% if (locals.userData.rapidStarted){ %> 
+     <a class="btn btn-primary" href="/rapid?pages=1" role="button">Continue RAPID test</a>
+   <% } else { %> 
+     <a class="btn btn-primary" href="/rapid?pages=1" role="button">Start RAPID test</a>
+     
+   <% } %> 
+ </div>
+    <div>
+    <h2>MCQ Tutorial</h2>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item"
+        src="https://youtu.be/SNeIdE0OADE"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </div>
+    <hr>
+  </div>
+ <hr>
+ <% } %> 
+
+
+  <!-- Status for all modules -->
+  <div>
+    <h2>Status</h2>
+    <p>Please refresh your page if the status is not correctly reflected</p>
+    <h6>MCQ Module: 
+    
+    <% if (locals.userData.mcqStarted && !locals.userData.mcqCompleted) { %>
+    started on <%= new Date(locals.userData.mcqStartTime * 1).toLocaleString() %> 
+    <% } else if (locals.userData.mcqCompleted) { %> 
+      Completed
+    <% } else { %> 
+    Not started
+    <% } %> 
+
+    <br>
+
+    <h6>OSCE Module: 
+      
+    <% if (locals.userData.osceStarted && !locals.userData.osceCompleted) { %>
+    started on <%= new Date(locals.userData.osceStartTime * 1).toLocaleString() %> 
+    <% } else if (locals.userData.osceCompleted) { %> 
+      Completed
+    <% } else { %> 
+    Not started
+    <% } %> 
+
+    <h6>Rapid Module: 
+      <% if (locals.userData.rapidStarted && !locals.userData.rapidCompleted) { %>
+        started on <%= new Date(locals.userData.rapidStartTime * 1).toLocaleString() %> 
+      <% } else if (locals.userData.rapidCompleted) { %> 
+        Completed
+      <% } else { %> 
+      not started
+      <% } %> 
+  </div>
+
+  <hr>
+  <% if(locals.userData.mcqCompleted && locals.userData.osceCompleted && locals.userData.rapidCompleted){ %> 
+  <div>
+    <h2>Result</h2>
+    <p>Congratulation, you have complete all three papers</p>
+    <p>The results will be out in two weeks.</p>
+    <p>In the mean time, please complete the survey to receive you result by clicking <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9RAe1sEEXQzzotMyjPPsNJuw_RIlVzS7v9wSYDZv9Z0qNYg/viewform?usp=header">here</a></p>
+    <hr>
+  </div>
+
+
+
+  <p>
+    <strong>MCQ: </strong><%= parseInt(locals.userData.mcqScore) %>% 
+    <% if (parseInt(locals.userData.mcqScore) >= 50){  %> 
+    - Pass
+    <% } else {%> 
+    - Fail
+    <% } %> 
+    <br>
+    <strong>OSCE: </strong><%= parseInt(locals.userData.osceScore) %>% 
+    <% if (parseInt(locals.userData.osceScore) >= 50){  %> 
+      - Pass
+      <% } else if (parseInt(locals.userData.osceScore) < 50) {%> 
+      - Fail
+      <% } else {%>
+      - Not Marked
+      <% } %> 
+    <br>
+    <strong>Rapid: </strong><%= parseInt(locals.userData.rapidScore) %>% 
+    <% if (parseInt(locals.userData.rapidScore) >= 50){  %> 
+      - Pass
+      <% } else if (parseInt(locals.userData.rapidScore) < 50) {%> 
+      - Fail
+      <% } else {%>
+      - Not Marked
+      <% } %> 
+    <br>
+  </p> 
+  <% } %> 
+
+</div>
+<br>
+
+</div>
+
+
+
+
+
+
+<!-- 
+<script>
+  $(document).ready(function () {
+    let time = $("#oscetime").html();
+    console.log(time);
+    let inttime = parseInt(time)
+    let date = new Date(inttime);
+    console.log(date);
+    $("#oscedate").html(date);
+  });
+
+  $(document).ready(function () {
+    let time = $("#rapidtime").html();
+    console.log(time);
+    let inttime = parseInt(time)
+    let date = new Date(inttime);
+    console.log(date);
+    $("#rapiddate").html(date);
+  });
+</script> -->
+<%- include('partials/footer') %>

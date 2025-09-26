@@ -1,0 +1,28 @@
+    <p>Please refresh your page if the results are not correctly reflected</p>
+    <p>
+      <strong>MCQ: </strong><%= locals.userData.mcqScore %>% 
+      <% if (parseInt(locals.userData.mcqScore) >= 50){  %> 
+      - Pass
+      <% } else {%> 
+      - Fail
+      <% } %> 
+      <br>
+      <strong>OSCE: </strong><%= locals.userData.osceScore %>% 
+      <% if (parseInt(locals.userData.osceScore) >= 50){  %> 
+        - Pass
+        <% } else if (parseInt(locals.userData.osceScore) < 50) {%> 
+        - Fail
+        <% } else {%>
+        - Not Marked
+        <% } %> 
+      <br>
+      <strong>Rapid: </strong><%= locals.userData.rapidScore %>% 
+      <% if (parseInt(locals.userData.rapidScore) >= 50){  %> 
+        - Pass
+        <% } else if (parseInt(locals.userData.rapidScore) < 50) {%> 
+        - Fail
+        <% } else {%>
+        - Not Marked
+        <% } %> 
+      <br>
+    </p> 

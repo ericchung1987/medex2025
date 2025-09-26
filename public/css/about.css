@@ -1,0 +1,88 @@
+.about-container{
+  color: black;
+  
+}
+
+#about-aim{
+  height:600px;
+}
+
+.about-container h1 {
+  font-weight: bold;
+  font-size: 50px;
+  margin: 40px 0px;
+}
+
+#pen-image-about{
+  width: 80%;
+  padding: 20px 0px, 20px, 0px;
+}
+
+.row-description{
+  border-style: solid none solid none;
+  height: 100%;
+}
+
+.row-header h2{
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.row-paragraph{
+  padding-top: 20px;
+
+}
+
+.row-paragraph h2{
+  font-weight: 600;
+}
+
+.no-border{
+  border-style:none;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* 2nd paragraph */
+
+#faculty_of_medicine_picture{
+  width: 80%;
+  padding-top: 40px;
+}
+
+#about-um{
+  height:350px;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* Meet the team section */
+
+.profile-pictures{
+  height:200px;
+  width: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+#team-profiles .col-4 p{
+  text-align: center;
+}
+
+#team-profiles .col-4 h5{
+  text-align: center;
+}
+
+#team-profiles h1{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 40px;
+
+}
+
+#team-profiles .row{
+  margin: 50px 0px;
+}

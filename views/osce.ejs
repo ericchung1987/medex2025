@@ -1,0 +1,373 @@
+<%- include('partials/header') %> <%- include('partials/navbar') %>
+<%if(locals.userData.osceCompleted === false){ %>
+<link rel="stylesheet" href="/css/clock.css" />
+
+<!-- Hidden stuff -->
+
+<p style="display: none" id="jsonObject"><%= locals.osce %></p>
+<p style="display: none" id="userAnswerObjects">
+  <%= JSON.stringify(locals.userData.osceAnswer[0]) %>
+</p>
+<p style="display: none" id="time"><%= locals.userData.osceStartTime %></p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm" style="text-align: right;">
+      <h1 >OSCE Module</h1>
+      <p> Please refresh the page if the timer does not load</p>
+    </div>
+    <div class="col-sm">
+      <!-- Timer -->
+      <div id="countdown">
+        <div id="tiles" class="color-full"></div>
+        <div class="countdown-label">Time Remaining</div>
+      </div>
+   
+    </div>
+  </div>
+</div>
+<hr />
+<!-- Pagination -->
+<div>
+<nav>
+  <ul class="pagination pagination-lg justify-content-center">
+    <li class="page-item"><a class="page-link" href="?pages=1">1</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=2">2</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=3">3</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=4">4</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=5">5</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=6">6</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=7">7</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=8">8</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=9">9</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=10">10</a></li>
+  </ul>
+</nav>
+<nav>
+  <ul class="pagination pagination-lg justify-content-center">
+    <li class="page-item"><a class="page-link" href="?pages=11">11</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=12">12</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=13">13</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=14">14</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=15">15</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=16">16</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=17">17</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=18">18</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=19">19</a></li>
+    <li class="page-item"><a class="page-link" href="?pages=20">20</a></li>
+  </ul>
+</nav>
+</div>
+
+<div style="margin-bottom: 20px" class="text-center">
+  <a class="btn btn-primary" href="/oscesummary" role="button">Summary</a>
+</div>
+
+<hr />
+
+<form action="/updateosce" method="POST" id="question_form">
+  <section>
+    <span id="figures"></span>
+    <input type="hidden" name="username" value="<%= userData.username %>" />
+    <input type="hidden" id="question_field" name="question" />
+    <input type="hidden" id="question_quan" name="question_quant" />
+
+    <div class="container">
+      <h3 id="question_number" class="question_no"></h3>
+      <figure id="figure" class="figure"></figure>
+      <h3 class="question_no">Answers</h3>
+      <div class="row justify-content-center">
+        <div id="question_place" class="form-group col-md-6"></div>
+      </div>
+    </div>
+    <h6 style="text-align: center">Click to save your answer</h6>
+    <div style="margin-bottom: 20px" class="text-center">
+      <button id="submitbutton" class="btn btn-secondary">Save</button>
+    </div>
+  </section>
+</form>
+
+<!-- Generate question -->
+<script>
+  const jsonObject = $("#jsonObject").text();
+  const osce = JSON.parse(jsonObject);
+  const userAnswerObjects = $("#userAnswerObjects").text();
+  const userAnswer = JSON.parse(userAnswerObjects);
+
+  // get the page first
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  var page = urlParams.get("pages");
+
+  // also set the page number
+  $("#question_field").val(page);
+  $("#question_quan").val(osce[page]["answer"]);
+
+  $("#question_number").text("Exhibit " + page);
+  let figure = $("#figure");
+
+  // Generate the image holder according to number of question
+  if (osce[page]["file"] == "1") {
+    let img1 = document.createElement("img");
+    let url = "/osce/" + page + ".jpg";
+    img1.src = url;
+    img1.className =
+      "figure-img img-fluid rounded img-thumbnail mx-auto d-block w-50";
+    img1.setAttribute("onclick", "openImageViewer('" + url + "')");
+    figure.append(img1);
+  } 
+  else if (osce[page]["file"] == "2") {
+    let img1 = document.createElement("img");
+    let img2 = document.createElement("img");
+    let url1 = "/osce/" + page + "a.jpg";
+    let url2 = "/osce/" + page + "b.jpg";
+    img1.src = url1;
+    img2.src = url2;
+    img1.className =
+      "figure-img img-fluid rounded img-thumbnail mx-auto d-block w-50";
+    img2.className =
+      "figure-img img-fluid rounded img-thumbnail mx-auto d-block w-50";
+    img1.setAttribute("onclick", "openImageViewer('" + url1 + "')");
+    img2.setAttribute("onclick", "openImageViewer('" + url2 + "')");
+    figure.append(img1);
+    figure.append(img2);
+  }
+
+  // Generate the answer holder
+  let placeHolder = $("#question_place");
+  let answer_no = osce[page]["answer"];
+
+  if (answer_no === "4") {
+    let label1 = document.createElement("label");
+    let label2 = document.createElement("label");
+    let label3 = document.createElement("label");
+    let label4 = document.createElement("label");
+    label1.innerHTML = "Label A";
+    label2.innerHTML = "Label B";
+    label3.innerHTML = "Label C";
+    label4.innerHTML = "Label D";
+    label1.attributes.for = "A";
+    label2.attributes.for = "B";
+    label3.attributes.for = "C";
+    label4.attributes.for = "D";
+    let answer1 = document.createElement("input");
+    let answer2 = document.createElement("input");
+    let answer3 = document.createElement("input");
+    let answer4 = document.createElement("input");
+    answer1.type = "text";
+    answer2.type = "text";
+    answer3.type = "text";
+    answer4.type = "text";
+    answer1.className = "form-control";
+    answer2.className = "form-control";
+    answer3.className = "form-control";
+    answer4.className = "form-control";
+    answer1.id = "A";
+    answer2.id = "B";
+    answer3.id = "C";
+    answer4.id = "D";
+    answer1.name = "A";
+    answer2.name = "B";
+    answer3.name = "C";
+    answer4.name = "D";
+    answer1.value = userAnswer[page]["A"];
+    answer2.value = userAnswer[page]["B"];
+    answer3.value = userAnswer[page]["C"];
+    answer4.value = userAnswer[page]["D"];
+    placeHolder.append(label1);
+    placeHolder.append(answer1);
+    placeHolder.append(label2);
+    placeHolder.append(answer2);
+    placeHolder.append(label3);
+    placeHolder.append(answer3);
+    placeHolder.append(label4);
+    placeHolder.append(answer4);
+  } 
+  else if (answer_no === "5") {
+    let label1 = document.createElement("label");
+    let label2 = document.createElement("label");
+    let label3 = document.createElement("label");
+    let label4 = document.createElement("label");
+    let label5 = document.createElement("label");
+    label1.innerHTML = "Label A";
+    label2.innerHTML = "Label B";
+    label3.innerHTML = "Label C";
+    label4.innerHTML = "Label D";
+    label5.innerHTML = "Label E";
+    label1.attributes.for = "A";
+    label2.attributes.for = "B";
+    label3.attributes.for = "C";
+    label4.attributes.for = "D";
+    label5.attributes.for = "E";
+    let answer1 = document.createElement("input");
+    let answer2 = document.createElement("input");
+    let answer3 = document.createElement("input");
+    let answer4 = document.createElement("input");
+    let answer5 = document.createElement("input");
+    answer1.type = "text";
+    answer2.type = "text";
+    answer3.type = "text";
+    answer4.type = "text";
+    answer5.type = "text";
+    answer1.className = "form-control";
+    answer2.className = "form-control";
+    answer3.className = "form-control";
+    answer4.className = "form-control";
+    answer5.className = "form-control";
+    answer1.id = "A";
+    answer2.id = "B";
+    answer3.id = "C";
+    answer4.id = "D";
+    answer5.id = "E";
+    answer1.name = "A";
+    answer2.name = "B";
+    answer3.name = "C";
+    answer4.name = "D";
+    answer5.name = "E";
+    answer1.value = userAnswer[page]["A"];
+    answer2.value = userAnswer[page]["B"];
+    answer3.value = userAnswer[page]["C"];
+    answer4.value = userAnswer[page]["D"];
+    answer5.value = userAnswer[page]["E"];
+    placeHolder.append(label1);
+    placeHolder.append(answer1);
+    placeHolder.append(label2);
+    placeHolder.append(answer2);
+    placeHolder.append(label3);
+    placeHolder.append(answer3);
+    placeHolder.append(label4);
+    placeHolder.append(answer4);
+    placeHolder.append(label5);
+    placeHolder.append(answer5);
+  }
+</script>
+<script src="/js/oscequiz.js"></script>
+
+<%} %> <% if(locals.userData.osceCompleted === true){ %>
+  <div class="container">
+    <p>
+      <%= userData.fullname %>, you have completed the OSCE module. Kindly navigate back to the <a href="/userpage">userpage</a> page.
+    </p>
+  </div>
+
+<%} %>
+
+<div class="modal fade" id="imagePopUp" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div id="imageHolder" class="embed-responsive">
+          <!-- the image will be placed here by js -->
+        </div>
+      </div>
+      <div style="margin-bottom: 20px" class="text-center">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Custom CSS style -->
+<style>
+  .figure {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .figure-padding {
+    padding: 0px 60px;
+  }
+
+  #quiz-container {
+    padding-top: 0px;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+
+  #squareContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: black;
+  }
+
+  #canvas_container {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+
+  #timeholder p {
+    display: inline;
+    font-size: 20px;
+    margin-top: 0px;
+  }
+
+  #imagePopUp .modal-content {
+    background-color: rgba(229, 204, 240, 0.95);
+    border: 0px none transparent;
+  }
+
+  #imagePopUp .modal-header {
+    border: 0px none transparent;
+  }
+
+  .question_no {
+    text-align: center;
+  }
+</style>
+
+<!-- For enlarging viewer -->
+<script>
+  function openImageViewer(url) {
+    // Create the appropriate elements.
+    let image = document.createElement("img");
+    // set the src and classes as well as inner text for caption
+    image.setAttribute("src", url);
+    image.setAttribute("class", "d-block w-100 img-fluid rounded");
+    // append the image and text to the respective holder
+    document.getElementById("imageHolder").appendChild(image);
+    // show the modal
+    $("#imagePopUp").modal("show");
+  }
+
+  $(document).ready(function () {
+    $(".modal").on("hidden.bs.modal", function (e) {
+      $(".modal img").remove();
+      $(".modal p").remove();
+    });
+  });
+  document.addEventListener("contextmenu", (event) => event.preventDefault());
+</script>
+
+<script>
+  $(document).ready(function () {
+      const btn = document.getElementById('submitbutton');
+
+      btn.addEventListener('click', () => {
+          if (btn.innerHTML === 'Save') {
+              btn.innerHTML = 'Answer Saved';
+              btn.classList.toggle("btn-success");
+              btn.classList.toggle("btn-primary");
+          }
+      });
+  });
+</script>
+
+
+
+<%- include('partials/footer') %>
